@@ -6,16 +6,16 @@ import javax.persistence.*;
 public class Cab{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    int perKmRate;
+    private int perKmRate;
 
 
-    boolean available;
+    private boolean available;
 
     @OneToOne
     @JoinColumn()
-    Driver driver;
+    private Driver driver;
 
     public Cab() {
 

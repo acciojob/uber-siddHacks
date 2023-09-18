@@ -9,14 +9,14 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int customerId;
+    private int customerId;
 
-    String mobile;
+    private String mobile;
 
-    String password;
+    private String password;
 
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    List<TripBooking> tripBookingList = new ArrayList<>();
+    private List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Customer() {
     }

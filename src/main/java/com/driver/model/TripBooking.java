@@ -7,13 +7,13 @@ public class TripBooking{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int tripBookingId;
+    private int tripBookingId;
 
-    String fromLocation;
+    private String fromLocation;
 
-    String toLocation;
+    private String toLocation;
 
-    int distanceInKm;
+    private int distanceInKm;
 
     public TripStatus getStatus() {
         return status;
