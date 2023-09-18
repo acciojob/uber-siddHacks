@@ -61,7 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
 			throw new Exception("Customer not found!");
 		}
 
-		currDriver.getCab().isAvailable(false);
+		currDriver.getCab().setAvailable(false);
 		Customer currCustomer = customerOptional.get();
 
 
@@ -100,7 +100,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		TripBooking tripBooking = tripBookingOptional.get();
-		tripBooking.getDriver().getCab().isAvailable(true);
+		tripBooking.getDriver().getCab().setAvailable(true);
 		tripBooking.setBill(0);
 		tripBooking.setStatus(TripStatus.CANCELED);
 
@@ -118,7 +118,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 		TripBooking tripBooking = tripBookingOptional.get();
 		tripBooking.setBill(tripBooking.getDriver().getCab().getPerKmRate() * tripBooking.getDistanceInKm());
-		tripBooking.getDriver().getCab().isAvailable(true);
+		tripBooking.getDriver().getCab().setAvailable(true);
 		tripBooking.setStatus(TripStatus.COMPLETED);
 
 		tripBookingRepository2.save(tripBooking);
